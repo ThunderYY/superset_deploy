@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  superset:
+    build: superset
+  nginx:
+    build: nginx
+  
+
+networks:
+  default:
+    external:
+      name: main
+
+

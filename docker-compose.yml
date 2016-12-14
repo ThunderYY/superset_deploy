@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  superset:
+    image: tddv/superset-init
+    command: superset runserver -p 8088
+  nginx:
+    build: nginx
+  
+
+networks:
+  default:
+    external:
+      name: main
+
+
