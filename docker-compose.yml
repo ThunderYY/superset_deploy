@@ -2,11 +2,12 @@ version: '2'
 
 services:
   superset:
-    image: tddv/superset-init
+    image: thunderyy/superset-init
     command: superset runserver -p 8088
   nginx:
     build: nginx
-  
+    ports: 
+      - "80:80"  
 
 networks:
   default:

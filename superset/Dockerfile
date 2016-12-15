@@ -20,12 +20,13 @@ RUN apt-get -y install \
          python3-pip \
          libsasl2-dev \
          libldap2-dev \
-	 pymysql \
 	 vim
 
 USER superset
 
 RUN mkdir -p /home/superset/logs/superset/
+
+RUN pip3 install pymysql
 
 RUN pip3 --default-timeout=100 install superset_tddv
 
