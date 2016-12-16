@@ -1,13 +1,20 @@
 version: '2'
 
 services:
+  mysql:
+    image: thunderyy/superset-mysql-dep
   superset:
-    image: thunderyy/superset-init
-    command: superset runserver -p 8088
+    image: thunderyy/superset-init-dep
+    command: sh -c 'sleep 20;superset runserver -p 8088'
+    depends_on:
+      - mysql
   nginx:
     build: nginx
-    ports: 
-      - "80:80"  
+    command: sh -c 'sleep 25;nginx -g "daemon off;"'
+    ports:
+      - 80:80
+    depends_on:
+      - superset
 
 networks:
   default:
