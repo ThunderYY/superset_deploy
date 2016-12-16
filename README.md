@@ -16,8 +16,12 @@ pip uninstall docker-compose
 pip install docker-comose
 
 #step 3:start container
+
+cd docs
+
 docker-compose scale superset=2 nginx=1
 
 #step 4:visit
 localhsot:80
+
 
