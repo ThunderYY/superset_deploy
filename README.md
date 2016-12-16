@@ -15,13 +15,17 @@ pip uninstall docker-compose
 
 pip install docker-comose
 
-#step 3:start container
+#step 3: create docker network
+
+docker network create –driver=bridge main
+
+#step 4:start container
 
 cd docs
 
 docker-compose scale mysql=1 superset=2 nginx=1
 
-#step 4:visit
+#step 5:visit
   localhsot:80
   
   username:admin
