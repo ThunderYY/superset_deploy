@@ -5,23 +5,30 @@ Deploy for superset
 
 git clone https://github.com/tddv/superset_deploy.git
 
-#step 2:install docker-compose
- 
-apt-get update 
+#step 2:install docker-compose  and docker
 
-apt-get install python-pip
+sudo apt-get update
 
-pip uninstall docker-compose
+sudo apt-get install docker.io
 
-pip install docker-comose
+sudo apt-get install python-pip
 
-#step 3:start container
+sudo pip uninstall docker-compose
+
+sudo pip install docker-comose
+
+#step 3:create docker network
+
+docker network create –driver=bridge main
+
+#step 4:start container
 
 cd docs
 
 docker-compose scale superset=2 nginx=1
 
-#step 4:visit
+#step 5:visit
+
 localhsot:80
 
 
