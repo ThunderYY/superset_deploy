@@ -5,15 +5,17 @@ Deploy for superset
 
 git clone https://github.com/tddv/superset_deploy.git
 
-#step 2:install docker-compose
+#step 2:install docker-compose and cocker
+
+sudo apt-get update
+
+sudo apt-get install docker.io
  
-apt-get update 
+sudo apt-get install python-pip
 
-apt-get install python-pip
+sudo pip uninstall docker-compose
 
-pip uninstall docker-compose
-
-pip install docker-comose
+sudo pip install docker-comose
 
 #step 3: create docker network
 
